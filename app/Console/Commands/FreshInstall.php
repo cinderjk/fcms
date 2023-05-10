@@ -38,6 +38,8 @@ class FreshInstall extends Command
      */
     public function handle()
     {
+        $this->info(PHP_EOL.'Doing key generation...');
+        Artisan::call('key:generate');
         $this->info('Doing migration...');
         Artisan::call('migrate:fresh');
         $this->info('Doing seeding...');
